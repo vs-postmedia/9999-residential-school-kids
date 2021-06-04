@@ -1,13 +1,13 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[0],{
 
-/***/ 106:
+/***/ 107:
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
 
 /***/ }),
 
-/***/ 110:
+/***/ 111:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -15,7 +15,7 @@
 __webpack_require__.r(__webpack_exports__);
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/asyncToGenerator.js
-var asyncToGenerator = __webpack_require__(41);
+var asyncToGenerator = __webpack_require__(43);
 var asyncToGenerator_default = /*#__PURE__*/__webpack_require__.n(asyncToGenerator);
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/regenerator/index.js
@@ -23,34 +23,38 @@ var regenerator = __webpack_require__(20);
 var regenerator_default = /*#__PURE__*/__webpack_require__.n(regenerator);
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.sort.js
-var es_array_sort = __webpack_require__(71);
+var es_array_sort = __webpack_require__(73);
 
 // EXTERNAL MODULE: ./src/css/normalize.css
-var normalize = __webpack_require__(92);
+var normalize = __webpack_require__(93);
 
 // EXTERNAL MODULE: ./src/css/colors.css
-var colors = __webpack_require__(93);
+var colors = __webpack_require__(94);
 
 // EXTERNAL MODULE: ./src/css/fonts.css
-var fonts = __webpack_require__(94);
+var fonts = __webpack_require__(95);
 
 // EXTERNAL MODULE: ./src/css/main.css
-var main = __webpack_require__(95);
+var main = __webpack_require__(96);
+
+// EXTERNAL MODULE: ./node_modules/rellax/rellax.js
+var rellax_rellax = __webpack_require__(44);
+var rellax_default = /*#__PURE__*/__webpack_require__.n(rellax_rellax);
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.slice.js
-var es_array_slice = __webpack_require__(96);
+var es_array_slice = __webpack_require__(97);
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.function.name.js
-var es_function_name = __webpack_require__(102);
+var es_function_name = __webpack_require__(103);
 
 // EXTERNAL MODULE: ./node_modules/d3fc-label-layout/build/d3fc-label-layout.js
-var d3fc_label_layout = __webpack_require__(103);
+var d3fc_label_layout = __webpack_require__(104);
 
 // EXTERNAL MODULE: ./node_modules/d3/index.js + 114 modules
-var d3 = __webpack_require__(43);
+var d3 = __webpack_require__(21);
 
 // EXTERNAL MODULE: ./src/js/App/weepeople.css
-var weepeople = __webpack_require__(106);
+var weepeople = __webpack_require__(107);
 
 // CONCATENATED MODULE: ./src/js/App/app.js
 
@@ -78,14 +82,15 @@ var alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
 var app_init = function init(data, el) {
   var container = d3["a" /* select */](el); // set height & width
 
-  height = container.style('height').slice(0, -2);
+  height = data.length / figureWidth * lineHeight * 9;
+  d3["a" /* select */]('#app').style('height', "".concat(height, "px")); // height = container.style('height').slice(0, -2);
+
   width = container.style('width').slice(0, -2);
-  var svg = container.append('svg').attr('viewbox', [0, 0, width, height]); // people icons
+  var svg = container.append('svg').attr('viewbox', [0, 0, width, height]).style('height', "".concat(height, "px")); // people icons
 
   var figure = svg.append('g').selectAll('text').data(data).enter().append('text').attr('class', 'figure').style('opacity', function (d) {
     return !d.school ? 0.4 : 1;
-  }) // .attr('dx', (d,i) => i * 5 + 10)
-  .attr('x', function (d, i) {
+  }).attr('x', function (d, i) {
     countX += 1;
     var x = countX * figureWidth;
 
@@ -155,7 +160,7 @@ function randomNumber(min, max) {
 
 
 // EXTERNAL MODULE: ./src/data/data.js
-var data_data = __webpack_require__(42);
+var data_data = __webpack_require__(45);
 var data_default = /*#__PURE__*/__webpack_require__.n(data_data);
 
 // CONCATENATED MODULE: ./src/index.js
@@ -171,17 +176,20 @@ var data_default = /*#__PURE__*/__webpack_require__.n(data_data);
 
 
 
+
 var src_init = /*#__PURE__*/function () {
   var _ref = asyncToGenerator_default()( /*#__PURE__*/regenerator_default.a.mark(function _callee() {
+    var rellax;
     return regenerator_default.a.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
+            rellax = new rellax_default.a('.rellax');
             app_init(data_default.a.sort(function () {
               return Math.random() - 0.5;
             }), '#background');
 
-          case 1:
+          case 2:
           case "end":
             return _context.stop();
         }
@@ -198,7 +206,7 @@ src_init();
 
 /***/ }),
 
-/***/ 42:
+/***/ 45:
 /***/ (function(module, exports) {
 
 module.exports = [{
@@ -11705,13 +11713,6 @@ module.exports = [{
 
 /***/ }),
 
-/***/ 92:
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-
-/***/ }),
-
 /***/ 93:
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11731,6 +11732,13 @@ module.exports = [{
 
 // extracted by mini-css-extract-plugin
 
+/***/ }),
+
+/***/ 96:
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
 /***/ })
 
-},[[110,1,2]]]);
+},[[111,1,2]]]);
