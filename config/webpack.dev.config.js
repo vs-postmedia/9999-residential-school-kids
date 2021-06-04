@@ -214,11 +214,13 @@ module.exports = {
 					{
 						loader: 'file-loader',
 						options: {
-							name: '[name].[contenthash:8].[ext]',
+							name: './images/[name].[ext]',
+							// name: '[name].[contenthash:8].[ext]',
 							// inline files < 4kb using bse64 URIs
-							limit: 4096,
+							limit: 4096
 							// output folder for assets (ie: dist/assets)
-							outputPath: 'assets'
+							// outputPath: 'src/images',
+							// esModule: false
 						}
 					}
 				]
